@@ -5,5 +5,5 @@ module.exports = function(app){
   app.post("/api/athletes", AthleteController.create);
   app.get("/api/athletes/:id", AthleteController.detail);
   app.put("/api/athletes/:id", AthleteController.update);
-
+  app.delete("/api/athletes/:id", AthleteController.delete);
 }

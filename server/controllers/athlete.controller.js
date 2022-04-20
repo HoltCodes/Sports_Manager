@@ -41,9 +41,31 @@ module.exports.detail = (request, response) => {
 
 module.exports.update = (request, response) => {
   const { id } = request.params;
-  Athlete.findByIdAndUpdate({ _id: id })
+  const { firstName, lastName, sport, team } = request.body;
+  Athlete.findByIdAndUpdate({ _id: id }, {
+    firstName,
+    lastName,
+    sport,
+    team
+  },
+  {
+
+    new:true,
+    useFindAndModify: true
+  })
     .then(athlete => {
       response.json(athlete)
+    })
+    .catch(err => {
+      response.status(400).json(err);
+    })
+}
+
+module.exports.delete = (request, response) => {
+  const { id } = request.params;
+  Athlete.deleteOne({_id: id})
+    .then(deleteConfirmation => {
+      response.json(deleteConfirmation);
     })
     .catch(err => {
       response.status(400).json(err);
