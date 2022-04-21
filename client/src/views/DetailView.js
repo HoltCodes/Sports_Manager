@@ -7,7 +7,7 @@ const DetailView = props => {
   const { id } = props;
   const [athlete, setAthlete] = useState({});
   useEffect(() => {
-    axios.get('http://localhost:8000/api/athletes/' + id)
+    axios.get("http://localhost:8000/api/athletes/" + id)
       .then(response => {
         setAthlete(response.data);
       })
@@ -20,7 +20,7 @@ const DetailView = props => {
       <h1>{athlete.firstName} {athlete.lastName}</h1>
       <p>Sport: {athlete.sport}</p>
       <p>Team: {athlete.team}</p>
-      <DeleteButton />
+      <DeleteButton id={athlete._id} />
     </div>
   )
 }

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import DeleteButton from '../components/DeleteButton';
-import { Link } from '@reach/router';
+import { Link } from "@reach/router";
 import axios from 'axios';
 
 const IndexView = props => {
@@ -23,7 +23,7 @@ const IndexView = props => {
             return (
               <li key={ index }><Link to={"/" + athlete._id}> {athlete.firstName} {athlete.lastName} </Link> | 
               <Link to={"/" + athlete._id + "/edit"}> Edit </Link> |
-              <DeleteButton /> </li>
+              <DeleteButton id={athlete._id} /> </li>
             )
         })}
       </ul>

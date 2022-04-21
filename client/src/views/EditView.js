@@ -9,7 +9,7 @@ const EditView = props => {
   const [athlete, setAthlete] =  useState({});
   const [loaded, setLoaded] = useState(false);
   useEffect(() => {
-    axios.get('http://localhost:8000/api/athletes/' + id)
+    axios.get("http://localhost:8000/api/athletes/" + id)
     .then(response => {
       setAthlete(response.data)
       setLoaded(true);
@@ -34,6 +34,10 @@ const EditView = props => {
      { loaded &&
       <Form 
           onSubmitHandler={onSubmitHandler} 
+          initialFirstName={athlete.firstName}
+          initialLastName={athlete.lastName}
+          initialSport={athlete.sport}
+          initialTeam={athlete.team}
       />
      }
       <DeleteButton />
