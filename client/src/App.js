@@ -1,6 +1,7 @@
 import './App.css';
 import React from 'react';
-import { Router } from "react-router-dom";
+import { ReactDOM } from 'react-dom';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import IndexView from './views/IndexView';
 import CreateView from './views/CreateView';
 import DetailView from './views/DetailView';
