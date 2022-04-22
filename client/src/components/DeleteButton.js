@@ -1,4 +1,4 @@
-import { navigate } from "@reach/router";
+import { Navigate } from "react-router-dom";
 import axios from "axios";
 import React from "react";
 
@@ -8,7 +8,7 @@ const DeleteButton = props => {
     axios.delete(`http://localhost:8000/api/athletes/` + id)
       .then(response => {
         console.log(response);
-        navigate('/');
+        Navigate('/');
       })
       .catch(err => {
         console.log(err);

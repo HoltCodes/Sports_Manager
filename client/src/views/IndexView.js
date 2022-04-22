@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import DeleteButton from '../components/DeleteButton';
-import { Link } from "@reach/router";
+import { Link } from "react-router-dom";
 import axios from 'axios';
 
 const IndexView = props => {

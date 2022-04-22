@@ -1,4 +1,4 @@
-import { navigate } from "@reach/router";
+import { Navigate } from "react-router-dom";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import DeleteButton from "../components/DeleteButton";
@@ -22,7 +22,7 @@ const EditView = props => {
     e.preventDefault();
     axios.put("http://localhost:8000/api/athletes/" +id, data)
     .then(response => {
-      navigate('/');
+      Navigate('/');
     })
     .catch(err => {
       console.log(err);

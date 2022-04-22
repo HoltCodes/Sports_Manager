@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import { Router } from '@reach/router';
+import { Router } from "react-router-dom";
 import IndexView from './views/IndexView';
 import CreateView from './views/CreateView';
 import DetailView from './views/DetailView';

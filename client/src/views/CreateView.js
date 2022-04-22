@@ -1,4 +1,4 @@
-import { navigate } from '@reach/router';
+import { Navigate } from "react-router-dom";
 import React, { useState } from 'react';
 import Form from '../components/Form';
 import axios from 'axios';
@@ -9,7 +9,7 @@ const CreateView = props => {
     e.preventDefault();
     axios.post("http://localhost:8000/api/athletes", data)
     .then(response => {
-      navigate('/');
+      Navigate('/');
     })
     .catch(err => {
       console.log(err);
